@@ -1,4 +1,4 @@
-# [Комментарий](https://t.me/iksergeyru/8) в Telegram-[канале](https://t.me/iksergeyru)
+# [Комментарий](https://t.me/iksergeyru/9) в Telegram-[канале](https://t.me/iksergeyru)
 
 ## Решение 
 ### [.NET C#](dotnet/Program.cs)
