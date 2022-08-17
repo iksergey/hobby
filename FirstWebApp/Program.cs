@@ -1,10 +1,13 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddMvc();
 var app = builder.Build();
+app.UseRouting();
 
-app.MapGet("/", () => "Hello My Wrold!");
-
-app.MapGet("/about", () => RouteMethods.About());
-app.MapGet("/hi/{name}", (string name) => RouteMethods.Hi(name));
-app.MapGet("/calc/{x}+{y}", (int x, int y) => RouteMethods.Sum(x, y));
+app.UseEndpoints(endpoint =>
+  endpoint.MapControllerRoute(
+    name: "Default",
+    pattern: "api/{controller}/{action}/{arg?}"
+  )
+);
 
 app.Run();
