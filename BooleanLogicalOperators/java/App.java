@@ -5,7 +5,15 @@ public class App {
 
     int[] numbers = { 1, 2, 3, 4, 5, 6, 7 };
 
+    // ошибка выполнения
     if (numbers.length > 10 & numbers[9] == 1990) {
+      System.out.println("yes");
+    } else {
+      System.out.println("no");
+    }
+
+    // работает без ошибок
+    if (numbers.length > 10 && numbers[9] == 1990) {
       System.out.println("yes");
     } else {
       System.out.println("no");
