@@ -128,7 +128,4 @@ foreach (var row in jagged)
 
 #endregion
 
-// Как инициализировать такой массив?
-int[][][] whatAreYou;
-
 
