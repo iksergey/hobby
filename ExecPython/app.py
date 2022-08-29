@@ -1,9 +1,9 @@
 tests = ["goo", "doo", "foo"]
-locals()[tests[0]] = 42
+locals()[tests[0]] = 42go
 print(f"goo = {goo}")  # goo = 42
 
 # 2.
-locals()[tests[1]] = 2809
+globals()[tests[1]] = 2809
 print(f"doo = {doo}")  # doo = 2809
 
 value = 2023
