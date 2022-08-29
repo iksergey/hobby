@@ -1,5 +1,5 @@
 tests = ["goo", "doo", "foo"]
-locals()[tests[0]] = 42go
+locals()[tests[0]] = 42
 print(f"goo = {goo}")  # goo = 42
 
 # 2.
