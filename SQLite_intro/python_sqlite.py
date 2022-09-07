@@ -1,5 +1,6 @@
 import sqlite3 as db
 from random import randint
+from datetime import datetime, date, time
 
 connection = db.connect("users.db")
 cursor = connection.cursor()
@@ -16,11 +17,12 @@ CREATE TABLE clients (
 
 
 for i in range(1, 10):
+    dt = date(randint(1990, 2020), randint(1, 12), randint(1, 28))
     sql = f'''
     INSERT INTO clients
         (id, full_name, date_birth, status)
     VALUES
-        ({i}, "ФИО_{i}", 2022-09-28, {randint(100,999)} );
+        ({i}, "ФИО_{i}", "{dt}", {randint(100,999)} );
     '''
     cursor.execute(sql)
 
@@ -30,12 +32,12 @@ items = cursor.execute("SELECT * FROM clients").fetchall()
 for item in items:
     print(item)
 
-# (1, 'ФИО_1', '1985', 862)
-# (2, 'ФИО_2', '1985', 221)
-# (3, 'ФИО_3', '1985', 655)
-# (4, 'ФИО_4', '1985', 859)
-# (5, 'ФИО_5', '1985', 760)
-# (6, 'ФИО_6', '1985', 257)
-# (7, 'ФИО_7', '1985', 442)
-# (8, 'ФИО_8', '1985', 194)
-# (9, 'ФИО_9', '1985', 836)
+# (1, 'ФИО_1', '1991-09-01', 616)
+# (2, 'ФИО_2', '1993-09-08', 602)
+# (3, 'ФИО_3', '1990-09-25', 770)
+# (4, 'ФИО_4', '2001-12-25', 686)
+# (5, 'ФИО_5', '2003-03-06', 227)
+# (6, 'ФИО_6', '2019-12-22', 889)
+# (7, 'ФИО_7', '2008-11-15', 882)
+# (8, 'ФИО_8', '2013-08-23', 868)
+# (9, 'ФИО_9', '2005-01-12', 963)
