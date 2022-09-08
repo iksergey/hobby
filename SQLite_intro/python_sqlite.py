@@ -24,8 +24,10 @@ for i in range(1, 10):
     VALUES
         ({i}, "ФИО_{i}", "{dt}", {randint(100,999)} );
     '''
-    cursor.execute(sql)
+    cursor.execute(sql).fetchall()
 
+# Фиксация изменений
+connection.commit()
 
 items = cursor.execute("SELECT * FROM clients").fetchall()
 
