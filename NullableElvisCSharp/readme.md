@@ -1,0 +1,1 @@
+Полный текст в [Telegram](https://t.me/iksergeyru/58)
