@@ -23,4 +23,6 @@
 <error line="49" column="46" severity="error" message="&apos;3&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
 <error line="50" column="46" severity="error" message="&apos;4&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
 </file>
+<file name="/Users/i/Developer/Hobby/SQLite_intro/java/sqlitedemo/src/test/java/ru/ksergey/AppTest.java">
+</file>
 </checkstyle>
