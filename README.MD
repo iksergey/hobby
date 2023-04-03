@@ -1,4 +1,6 @@
-1. [F# Небольшая #история 1 Про F#](https://t.me/iksergeyru/4)
+1.Для использования в пограмировании 03.04.2023 
+
+[F# Небольшая #история 1 Про F#](https://t.me/iksergeyru/4)
 2. [JavaScript Функции!](https://t.me/iksergeyru/5)
 3. [Что мы не знаем про GitHub?](https://t.me/iksergeyru/6)
 4. [Сегодня будет #история 2, давайте назовём её «Черный лебедь».](https://t.me/iksergeyru/7) | [код](https://github.com/iksergey/iksergey.github.io)
