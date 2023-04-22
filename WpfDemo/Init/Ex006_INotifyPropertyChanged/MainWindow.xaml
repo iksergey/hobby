@@ -1,0 +1,45 @@
+﻿<Window x:Class="Ex006_INotifyPropertyChanged.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex006_INotifyPropertyChanged"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="gridView">
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="stackPanel" Grid.Column="1">
+            <RadioButton x:Name="rbAccredited" 
+                         Content="Accredited" 
+                         Margin="10"
+                         IsChecked="{Binding Accredited}"/>
+            <CheckBox x:Name="cbAccredited" 
+                      Content="Accredited" 
+                      Margin="10"
+                      IsChecked="{Binding Accredited}"/>
+            <TextBlock x:Name="tbAccredited" Text="{Binding Accredited}"/>
+            <Button x:Name="btnAppendDepartment"
+                    Margin="10" 
+                    Content="Append department"
+                    />
+            <Button x:Name="btnEditDepartment"
+                    Margin="10" 
+                    Content="Edit department" 
+                    />
+            <TextBox Margin="10" Text="{Binding ElementName=lbDepartment, Path=SelectedItem.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <ListBox Margin="10" ItemsSource="{Binding Departments}"
+                 SelectionMode="Multiple"
+                 x:Name="lbDepartment">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="Ex009_SimpleMvvm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex009_SimpleMvvm" xmlns:viewmodel="clr-namespace:Ex009_SimpleMvvm.ViewModel"
+        mc:Ignorable="d"
+        Title="MVVM Book" Height="300" Width="400" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewmodel:MainVM></viewmodel:MainVM>
+    </Window.DataContext>
+    <StackPanel>
+        <ListBox Name="lbWorkers" Height="100" ItemsSource="{Binding Path=Workers}"/>
+        <Border BorderBrush="Black" CornerRadius="5" Margin="15" Padding="15" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="130"></ColumnDefinition>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Height="24" Grid.ColumnSpan="2" Margin="0,5" Text="Full name"/>
+                <TextBox Grid.Column="1" Name="tbFullName" Height="24"
+                         Text="{Binding Path=CurrentWorker.FullName, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+                <TextBlock Grid.Row="1" Height="24" Grid.ColumnSpan="2" Margin="0,5" Text="Department"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="tbDepartment" Height="24"
+                         Text="{Binding Path=CurrentWorker.DepartmentName, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Button x:Name="btnAppendWorker" 
+                        Grid.Row="3" 
+                        Grid.ColumnSpan="2" 
+                        Height="24" 
+                        Command="{Binding AddWorker}"
+                        Content="Append worker"/>
+            </Grid>
+        </Border>
+    </StackPanel>
+</Window>

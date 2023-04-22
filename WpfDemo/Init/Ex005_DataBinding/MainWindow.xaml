@@ -1,0 +1,41 @@
+﻿<Window x:Class="Ex005_DataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localModel="clr-namespace:Ex005_DataBinding.Model"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <localModel:Worker x:Key="worker" FitstName="John" Salary="1000" Age="22"/>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Margin="10" >
+            <TextBlock Text="{Binding Source={StaticResource worker}, Path=FitstName}" 
+                       Margin="5"
+                       FontSize="20"
+                       />
+            <TextBlock FontSize="20" 
+                        Margin="5"
+                Text="{Binding Source={StaticResource worker}, Path=Salary,
+                                StringFormat = Salary \= {0} }" />
+            <TextBox Name="tbText" FontSize="20" />
+
+            <WrapPanel Margin="0,10">
+                <TextBlock Text="Текст: " FontSize="20" FontWeight="Bold" />
+                <TextBlock x:Name="tbMirror"
+                           Text="{Binding ElementName=tbText, Path=Text, Mode=TwoWay}"   
+                           FontSize="20"/>
+                <!--<TextBlock Text="Текст: " FontSize="20" FontWeight="Bold" />
+                <TextBlock x:Name="tbMirror" FontSize="20"/>-->
+            </WrapPanel>
+
+            <Slider Margin="10,20" x:Name="slider" Value="3"/>
+
+            <TextBox Text="{Binding ElementName=slider, Path=Value, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     Margin="5" FontSize="20"
+                     />
+        </StackPanel>
+    </Grid>
+</Window>
+

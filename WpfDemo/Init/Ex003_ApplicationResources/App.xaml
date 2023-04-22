@@ -1,0 +1,21 @@
+﻿<Application x:Class="Ex003_ApplicationResources.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Ex003_ApplicationResources"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="TextBlock" x:Key="TbBaseStyle">
+            <Setter Property="Foreground" 
+                    Value="Blue" />
+            <Setter Property="FontSize"
+                    Value="20" />
+        </Style>
+
+        <Style TargetType="TextBlock" 
+               x:Key="TbNewStyle" 
+               BasedOn="{StaticResource TbBaseStyle}">
+            <Setter Property="FontSize" 
+                    Value="30" />
+        </Style>
+    </Application.Resources>
+</Application>

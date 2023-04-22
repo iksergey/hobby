@@ -1,0 +1,33 @@
+﻿<Window x:Class="Ex004_DataTemplate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex004_DataTemplate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="lbItems"
+                 Background="Black">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <!--<TextBlock Text="{Binding}" FontSize="20" Foreground="White" />-->
+                        <Rectangle Fill="White" Height="1" Width="{Binding}" Margin="10"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1" >
+            <Button x:Name="btnAddItems" Margin="10" Content="Add items"/>
+            <Button x:Name="btnSelectionSortItems" Margin="10" Content="Sort items"/>
+            <Button x:Name="btnQuickSortItems" Margin="10" Content="Quick sort items"/>
+            <Button x:Name="btnShuffleItems" Margin="10" Content="Shuffle items"/>
+            <Button x:Name="btnClearItems" Margin="10" Content="Clear items"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+﻿<Application x:Class="Ex001_StaticResource.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Ex001_StaticResource" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <sys:String x:Key="StrInXamlResource">WPF в деле.</sys:String>
+    </Application.Resources>
+</Application>

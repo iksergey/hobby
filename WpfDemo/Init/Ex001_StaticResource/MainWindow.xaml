@@ -1,0 +1,59 @@
+﻿<Window x:Class="Ex001_StaticResource.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex001_StaticResource"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <x:Array x:Key="ItemsInXamlResource" Type="sys:String">
+            <sys:String>Item 1</sys:String>
+            <sys:String>Item 2</sys:String>
+            <sys:String>Item 3</sys:String>
+        </x:Array>
+    </Window.Resources>
+
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btn"
+                HorizontalAlignment="Stretch" 
+                Content="{StaticResource StrInXamlResource}" 
+                FontSize="30"                
+                VerticalAlignment="Stretch" 
+                Margin="10" 
+                Grid.Column="0" 
+                Grid.Row="1" 
+                Grid.ColumnSpan="2"/>
+
+        <ListBox ItemsSource="{StaticResource ItemsInXamlResource}" 
+                 HorizontalAlignment="Left" 
+                 Margin="23,26,0,0"
+                 VerticalAlignment="Top"
+                 Width="100"/>
+
+        <ComboBox ItemsSource="{StaticResource ItemsInXamlResource}" 
+                  HorizontalAlignment="Left" 
+                  Grid.Column="1"
+                  VerticalAlignment="Top"
+                  Width="100"/>
+
+        <Button Content="{StaticResource StrInXamlResource}"  
+                FontSize="30"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch" 
+                Margin="10" 
+                Grid.Column="1"
+                Grid.Row="2"/>
+    </Grid>
+</Window>

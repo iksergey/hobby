@@ -1,0 +1,41 @@
+﻿<Window x:Class="Ex007_Converter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex007_Converter.Converters"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <local:DayWeekConverter x:Key="Conv"/>
+    </Window.Resources>
+    <StackPanel>
+        <Slider 
+            Name="slider" 
+            Margin="10,20"           
+            Minimum="-2"
+            Maximum="9" 
+            TickPlacement="Both"
+            IsSnapToTickEnabled="True" 
+            Value="2" SmallChange="0"/>
+
+        <TextBox 
+            Margin="10"
+            FontSize="30"
+            Text="{Binding 
+                   ElementName = slider, 
+                   Path = Value, 
+                   Converter = {StaticResource Conv}, 
+                   Mode = TwoWay,
+                   UpdateSourceTrigger = PropertyChanged}"/>
+        <TextBox 
+            Margin="10"
+            FontSize="30"
+            Text="{Binding 
+                   ElementName = slider, 
+                   Path = Value, 
+                   Mode = TwoWay,
+                   UpdateSourceTrigger = PropertyChanged}"/>
+    </StackPanel>
+</Window>
+
