@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "3278d232-1abf-4434-ad00-833e0d1be483",
+		"name": "TokenSecurityAuthorize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17367059"
+	},
+	"item": [
+		{
+			"name": "Workers Controller",
+			"item": [
+				{
+					"name": "Get all workers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/Workers/get/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Workers",
+								"get",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get worker by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/Workers/get/8e3ea63d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Workers",
+								"get",
+								"8e3ea63d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove worker by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/Workers/remove/8e3ea63d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Workers",
+								"remove",
+								"8e3ea63d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Security Controller",
+			"item": [
+				{
+					"name": "Security token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Security/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Security",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5001/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VybmFtZSIsImp0aSI6ImE5YjczZGU4LTBlOWEtNDExZC1hZWE0LTBiMjQ3N2QyNTQ4NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE2ODI4MTAwNDUsImlzcyI6ImFkbWluIiwiYXVkIjoidmFsaWQifQ.SosLRp0qiNU3X_2wWEgWkyCsZ_konMabEQ_-ECL4gNA",
+			"type": "string"
+		}
+	]
+}
