@@ -86,3 +86,5 @@
 86. [Как начать в лямбда-выражения на Java](https://t.me/iksergeyru/141) | [код](https://github.com/iksergey/Hobby/blob/master/LambdaJava/Program.java)
 87. [💰 ООП: Инкапсуляция на примере Dota2](https://t.me/iksergeyru/143)
 88. [Telegram Bot на C# за пару минут](https://t.me/iksergeyru/144)
+
+89. [Гипотеза Коллатца](https://t.me/iksergeyru/375)
